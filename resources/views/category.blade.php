@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,13 +49,23 @@ footer {
   background-color: #333;
 
 }
+table, th, td {
+  border: 1px solid white;
+  text-align:center;
+  width:auto;
+  background-color:#f34;
+  padding:10px;
+  margin:20px;
+  color:white;
+}
+
 </style>
 </head>
 <body>
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#category">Aset</a></li>
+  <li><a  href="#home">Home</a></li>
+  <li><a class="active"  href="#news">Category</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
 </ul>
@@ -63,7 +74,24 @@ footer {
 <h2> 4 SI B - 173140914111058 </h2>
 </div>
 <div>
+<h3>Data kategori</h3>
+    <table>
+    <tr style="border:3px black">
+        <td>No</td>
+        <td>Nama Category</td>
+        <td>Id Category</td>
+    </tr>
+ @foreach($categories as $user)
+
+   <tr>
+       <td>{{ $user->id }}</td>
+       <td>{{ $user->name_category }}</td>
+       <td>{{ $user->id_category }}</td>
+   </tr>
+   @endforeach 
+    </table>
 </div>
 <footer> tugas 1- website-Pak Fatoni-2019</footer>
 </body>
 </html>
+

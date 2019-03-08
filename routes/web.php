@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('category',function()
+{
+    return "Hello Category";
+});
+Route::get('category/{id}',function($id)
+{
+    return "Hello Category ID ".$id;
+});
+//Route::resource('category','categoryController');
+
+Route::resource('category','categoryController')->only(['index','show']);
+//Route::resource('category','categoryController')->except(['destroy']);
+
+
