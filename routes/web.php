@@ -20,6 +20,9 @@ Route::get('layout', function () {
 Route::get('dashboard', function () {
     return view('dashboard.index');
 });
+Route::get('dashboardd', function () {
+    return view('dashboard');
+});
 Route::get('category',function()
 {
     return "Hello Category";
