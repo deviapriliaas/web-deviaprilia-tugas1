@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('layout', function () {
+    return view('layout.master');
+});
+Route::get('dashboard', function () {
+    return view('dashboard.index');
+});
 Route::get('category',function()
 {
     return "Hello Category";
