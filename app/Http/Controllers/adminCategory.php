@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-
-class categoryController extends Controller
+class adminCategory extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,24 +13,8 @@ class categoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        //return view('namaview',compact('namavariabel'));
-        return view('category',compact('categories'));
-
-        // sebelum dikasih viewdd($categories);
-        //ga harus pakai sih return Category::all()->toArray();
-    }
-    public function cari(Request $request)
-    {
-        $cari = $request->cari;
-
-        $categories=Category::where('name_category','like',"%".$cari."%")->paginate();
-
-        return view('category.index',['categories'=> $categories]);
-
-
-        // sebelum dikasih viewdd($categories);
-        //ga harus pakai sih return Category::all()->toArray();
+        $categories=Category::all();
+        return view('category.index',compact('categories'));
     }
 
     /**
