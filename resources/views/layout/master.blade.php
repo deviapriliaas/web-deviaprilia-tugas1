@@ -166,7 +166,7 @@
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
               <div class="item">
-                <img src="dist/img/user4-128x128.jpg" alt="user image" class="online">
+                <img src="{{asset('template/dist/img/user4-128x128.jpg')}}" alt="user image" class="online">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -181,7 +181,7 @@
                   <h4>Attachments:</h4>
 
                   <p class="filename">
-                    Theme-thumbnail-image.jpg
+                    Theme-thumbnail-image.jpg')}}
                   </p>
 
                   <div class="pull-right">
@@ -193,7 +193,7 @@
               <!-- /.item -->
               <!-- chat item -->
               <div class="item">
-                <img src="dist/img/user3-128x128.jpg" alt="user image" class="offline">
+                <img src="{{asset ('template/dist/img/user3-128x128.jpg')}}" alt="user image" class="offline">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -208,7 +208,7 @@
               <!-- /.item -->
               <!-- chat item -->
               <div class="item">
-                <img src="dist/img/user2-160x160.jpg" alt="user image" class="offline">
+                <img src="{{asset ('template/dist/img/user2-160x160.jpg')}}" alt="user image" class="offline">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -800,10 +800,10 @@
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{asset ('template/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="{{asset ('template/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="{{asset ('template/dist/js/demo.js"></script>
 </body>
 </html>

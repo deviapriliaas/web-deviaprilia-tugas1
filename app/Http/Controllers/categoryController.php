@@ -29,9 +29,6 @@ class categoryController extends Controller
 
         return view('category.index',['categories'=> $categories]);
 
-
-        // sebelum dikasih viewdd($categories);
-        //ga harus pakai sih return Category::all()->toArray();
     }
 
     /**
@@ -39,9 +36,10 @@ class categoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        \App\Category::create($request->all());
+        return redirect('dataCategory');
     }
 
     /**
@@ -74,7 +72,8 @@ class categoryController extends Controller
      */
     public function edit($id)
     {
-        //
+      $categories=\App\Category::find($id);
+        return view('category.edit',['categories'=>$categories]);
     }
 
     /**
@@ -84,9 +83,11 @@ class categoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $categories=\App\Category::find($id);
+        $categories->update($request->all());
+        return redirect('dataCategory');
     }
 
     /**
@@ -97,6 +98,8 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories=\App\Category::find($id);
+        $categories->delete($categories);
+        return redirect('dataCategory');
     }
 }

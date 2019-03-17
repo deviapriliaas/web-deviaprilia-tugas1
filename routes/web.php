@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('createView', function () {
+    return view('category.createCategory');
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,7 +43,12 @@ Route::get('category/{id}',function($id)
 
 Route::resource('category','categoryController')->only(['index','show']);
 //Route::resource('category','categoryController')->except(['destroy']);
-Route::resource('dataCategory','adminCategory')->except(['destroy']);
+Route::resource('dataCategory','adminCategory');//->except(['destroy']);
 Route::get('cari','categoryController@cari');
+Route::get('createcate','categoryController@create');
+Route::get('edit/{id}','categoryController@edit');
+Route::post('update/$id','categoryController@update');
+Route::get('hapus/{$id}','categoryController@destroy');
+
 
 
